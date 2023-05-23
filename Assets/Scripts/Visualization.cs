@@ -26,14 +26,25 @@ public class Visualization : MonoBehaviour
     [SerializeField] public  GameObject BossButtonUnlock;
     [SerializeField] public  GameObject BossLevelButton;
 
+    [SerializeField] public GameObject MarkFactory;
+    [SerializeField] public GameObject MarkForest;
+    [SerializeField] public GameObject MarkRubbish;
+    [SerializeField] public GameObject MarkPit;
+
     [SerializeField] private TextMeshProUGUI _scoreMoneyText;
     [SerializeField] private TextMeshProUGUI _scoreElectroText;
     [SerializeField] private TextMeshProUGUI _scoreGreenText;
     [SerializeField] private TextMeshProUGUI _scoreBlockText;
 
+    [SerializeField] private GameObject _nextButton;
+    [SerializeField] private GameObject _backButton;
+    [SerializeField] private GameObject _backBossButton;
+
     [SerializeField] private TextMeshProUGUI _statusUnlckBossButton;
 
     [SerializeField] private GameObject _extinguisher;
+
+    [SerializeField] private GameObject _plug;
 
     public Image Factory;
     public Image Forest;
@@ -145,30 +156,46 @@ public class Visualization : MonoBehaviour
     {
         _upgradeFactory.SetActive(!_upgradeFactory.activeSelf);
         _extinguisher.SetActive(!_extinguisher.activeSelf);
+        MarkForest.SetActive(!MarkForest.activeSelf);
+        _nextButton.SetActive(!_nextButton.activeSelf);
     }
 
     public void OpenUpgradeForest()
-    {
+    { 
         _upgradeForest.SetActive(!_upgradeForest.activeSelf);
         _extinguisher.SetActive(!_extinguisher.activeSelf);
+        MarkFactory.SetActive(!MarkFactory.activeSelf);
+        _nextButton.SetActive(!_nextButton.activeSelf);
     }
 
     public void OpenUpgradeRubbish()
     {
         _upgradeRubbish.SetActive(!_upgradeRubbish.activeSelf);
         _extinguisher.SetActive(!_extinguisher.activeSelf);
+        MarkPit.SetActive(!MarkPit.activeSelf);
+        _backButton.SetActive(!_backButton.activeSelf);
+        BossLevelButton.SetActive(!BossLevelButton.activeSelf);
+        BossButtonUnlock.SetActive(false);
+        _plug.SetActive(!_plug.activeSelf);
     }
 
     public void OpenUpgradePit()
     {
         _upgradePit.SetActive(!_upgradePit.activeSelf);
         _extinguisher.SetActive(!_extinguisher.activeSelf);
+        MarkRubbish.SetActive(!MarkRubbish.activeSelf);
+        _backButton.SetActive(!_backButton.activeSelf);
+        BossLevelButton.SetActive(!BossLevelButton.activeSelf);
+        BossButtonUnlock.SetActive(false);
+        _plug.SetActive(!_plug.activeSelf);
     }
 
     public void OpenUpgradeTower()
     {
         _upgradeTower.SetActive(!_upgradeTower.activeSelf);
         _extinguisher.SetActive(!_extinguisher.activeSelf);
+        //_backButton.SetActive(!_backButton.activeSelf);
+        _backBossButton.SetActive(!_backBossButton.activeSelf);
     }
     public void CheckSavedImage()
     {

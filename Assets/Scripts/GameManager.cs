@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     private Vector3 _mousepos;
 
+
     [DllImport("__Internal")]
     private static extern void ShowAdv();
     
@@ -233,6 +234,13 @@ public class GameManager : MonoBehaviour
     public void OnApplicationPause(bool pauseStatus)
     {
         isPaused = pauseStatus;
+    }
+
+    public void Test()
+    {
+        Storage.ScoreBlock += 100000;
+        Storage.ScoreElectro += 100000;
+        Storage.ScoreMoney += 100000;
     }
 }
 
